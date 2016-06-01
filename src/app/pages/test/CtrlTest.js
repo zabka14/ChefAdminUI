@@ -5,7 +5,6 @@
     .controller('CtrlTest', ['$scope', function($scope) {
       
       $scope.call = function() {
-        alert("coucou");
         var xhr_object = null;
         if(window.XMLHttpRequest){
            xhr_object = new XMLHttpRequest();
@@ -21,14 +20,15 @@
         var filename = "test.php";
         var data     = null;
         var filename = "app/AJAX/"+filename;
-        data = "FooBar";
+        data = "node=1&deploy=true";
 
         xhr_object.open("POST", filename, false);
         xhr_object.onreadystatechange = function() {
 
            if(xhr_object.readyState == 4) {
+              alert(xhr_object.responseText);
                   var test = JSON.parse(xhr_object.responseText);
-                  alert(test);
+                  
 
            }
 
