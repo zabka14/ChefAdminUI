@@ -11,8 +11,10 @@
           url: '/test',
           templateUrl: 'app/pages/test/test.html',
           title: 'Test',
+          controller: 'CtrlTest',
           sidebarMeta: {
-            order: 800,
+            order: 88,
+            icon: 'ion-navicon-round',
           },
         });
   }

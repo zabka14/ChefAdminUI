@@ -10,9 +10,10 @@
         .state('main', {
           url: '/main',
           templateUrl: 'app/pages/main/main.php',
-          title: 'Liste des applications',
+          title: 'Status',
           sidebarMeta: {
-            order: 800,
+            order: 1,
+            icon: 'ion-navicon-round',
           },
         });
   }

@@ -10,27 +10,22 @@
   angular.module('BlurAdmin.pages', [
     'ui.router',
     'BlurAdmin.pages.main',
+    'BlurAdmin.pages.app_list',
+    'BlurAdmin.pages.test',
   ])
 
       .config(function($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/main');
-        var state_main = {
-          name: 'test2',
-          url: '/test2',
-          title: 'Applications',
-          templateUrl: 'app/pages/test/test.html',
+        var state_conf = {
+          name: 'config_app',
+          url: '/config_app',
+          title: 'Configuration application ',
+          templateUrl: 'app/pages/config_app/config.php',
         };
 
-        var state_test = {
-          name: 'test',
-          url: '/test',
-          title: 'Test',
-          templateUrl: 'app/pages/test/test.html',
-        };
 
         $stateProvider
-            .state(state_main)
-            .state(state_test);
+            .state(state_conf);
 
         });
 
