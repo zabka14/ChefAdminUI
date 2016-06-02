@@ -2,9 +2,28 @@
   'use strict';
 
   angular.module('BlurAdmin.pages.test')
-    .controller('CtrlTest', ['$scope', function($scope) {
+
+      .service('serviceTest', function() {
+        var myVar = {};
+
+        function set(data) {
+            myVar=data;
+        };
+
+        function get(){
+            return myVar;
+        };
+
+        return {
+          set: set,
+          get: get
+        };
+      })
+
+
+    .controller('CtrlTest',  ['$scope', '$location', 'serviceTest', function($scope, $location, serviceTest) {
       
-      $scope.call = function() {
+      $scope.init = function() {
         var xhr_object = null;
         if(window.XMLHttpRequest){
            xhr_object = new XMLHttpRequest();
@@ -26,10 +45,12 @@
         xhr_object.onreadystatechange = function() {
 
            if(xhr_object.readyState == 4) {
-              alert(xhr_object.responseText);
-                  var test = JSON.parse(xhr_object.responseText);
                   
-
+                  var result = JSON.parse(xhr_object.responseText);
+                  $scope.envs = [];
+                  for (var i = 0; i < result.length; i++) {
+                      $scope.envs.push(result[i]);
+                  }
            }
 
         }
@@ -37,6 +58,21 @@
         xhr_object.send(data);
       }
 
+      $scope.switch = function(param){
+        serviceTest.set(param);
+        $location.path('/test2');
+      }
+
+
+    }])
+
+    .controller('CtrlTest2',  ['$scope', 'serviceTest', function($scope, serviceTest) {
+
+      $scope.init = function(){
+        alert(serviceTest.get());
+        var tmp = serviceTest.get();
+        $scope.var = tmp.value1;
+      }
 
     }]);
 

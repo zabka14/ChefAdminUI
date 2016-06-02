@@ -46,38 +46,6 @@
 
 
         </uib-tab>
-        <uib-tab heading="Configurer">
-            <div class="panel-heading clearfix"><h3 class="panel-title">Liste des parametres :</h3></div>
-            <div class="panel-body" ng-transclude="">
-                <table class="table">
-                  <tbody>
-                    <tr>
-                      <th width="10%">Nom du parametre</th>
-                      <th>Valeur</th>
-                    </tr>
-                    <tr>
-                      <td width="10%">Param 1</td>
-                      <td class="success">foo</td>
-                    </tr>
-                    <tr>
-                      <td width="10%">Param 2</td>
-                      <td class="success">bar</td>
-                    </tr>
-                    <tr>
-                      <td width="10%">Param 3</td>
-                      <td class="danger">null</td>
-                    </tr>
-                  </tbody>
-                </table>
-            </div>
-            <div class="panel-heading clearfix"><h3 class="panel-title">Options :</h3></div>
-            <form action="#/config_app" method="POST">
-            <button type="button" disabled="disabled" class="btn btn-primary btn-with-icon"><i class="ion-android-download"></i>Deployer</button> &nbsp;&nbsp;&nbsp;
-                <input type="hidden" name="app_name" value="MRM"></input>
-                <input type="hidden" name="env" value="disfe"></input>
-                <button type="submit" class="btn btn-info btn-with-icon"><i class="ion-stats-bars"></i>Modifier configuration</button>
-            </form>
-        </uib-tab>
       </uib-tabset>
     </div>
 
@@ -110,50 +78,11 @@
 
 
         </uib-tab>
-        <uib-tab heading="Configurer">
-          <div class="panel-heading clearfix"><h3 class="panel-title">Liste des parametres :</h3></div>
-            <div class="panel-body" ng-transclude="">
-                <table class="table">
-                  <tbody>
-                    <tr>
-                      <th width="10%">Nom du parametre</th>
-                      <th>Valeur</th>
-                    </tr>
-                    <tr>
-                      <td width="10%">Param 1</td>
-                      <td class="success">foo</td>
-                    </tr>
-                    <tr>
-                      <td width="10%">Param 2</td>
-                      <td class="success">bar</td>
-                    </tr>
-                    <tr>
-                      <td width="10%">Param 3</td>
-                      <td class="success">baz</td>
-                    </tr>
-                    <tr>
-                      <td width="10%">Creer un dump</td>
-                      <td class="default">
-                        <label class="radio-inline custom-radio nowrap">
-                          <input type="radio" name="dump" id="dumpOn" value="on" disabled checked> 
-                          <span>Oui</span>
-                        </label>
-                        <label class="radio-inline custom-radio nowrap">
-                          <input type="radio" name="dump" id="dumpOff" value="off" disabled> 
-                          <span>Non</span>
-                        </label>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-            </div>
-            <div class="panel-heading clearfix"><h3 class="panel-title">Options :</h3></div>
-            <button type="button" class="btn btn-primary btn-with-icon"><i class="ion-android-download"></i>Deployer</button> &nbsp;&nbsp;&nbsp;
-            <button type="button" class="btn btn-info btn-with-icon"><i class="ion-stats-bars"></i>Modifier configuration</button>
-        </uib-tab>
       </uib-tabset>
     </div>
   </div>
+
+
   <div ng-switch-when="cap">
       <div ba-panel
          ba-panel-class="tabs-panel xsmall-panel with-scroll">
@@ -183,34 +112,6 @@
           </div>
 
 
-        </uib-tab>
-        <uib-tab heading="Configurer">
-            <div class="panel-heading clearfix"><h3 class="panel-title">Liste des parametres :</h3></div>
-            <div class="panel-body" ng-transclude="">
-                <table class="table">
-                  <tbody>
-                    <tr>
-                      <th width="10%">Nom du parametre</th>
-                      <th>Valeur</th>
-                    </tr>
-                    <tr>
-                      <td width="10%">Param 1</td>
-                      <td class="success">foo</td>
-                    </tr>
-                    <tr>
-                      <td width="10%">Param 2</td>
-                      <td class="success">bar</td>
-                    </tr>
-                    <tr>
-                      <td width="10%">Param 3</td>
-                      <td class="danger">null</td>
-                    </tr>
-                  </tbody>
-                </table>
-            </div>
-            <div class="panel-heading clearfix"><h3 class="panel-title">Options :</h3></div>
-            <button type="button" disabled="disabled" class="btn btn-primary btn-with-icon"><i class="ion-android-download"></i>Deployer</button> &nbsp;&nbsp;&nbsp;
-            <button type="button" class="btn btn-info btn-with-icon"><i class="ion-stats-bars"></i>Modifier configuration</button>
         </uib-tab>
       </uib-tabset>
     </div>
@@ -243,47 +144,6 @@
           </div>
 
 
-        </uib-tab>
-        <uib-tab heading="Configurer">
-          <div class="panel-heading clearfix"><h3 class="panel-title">Liste des parametres :</h3></div>
-            <div class="panel-body" ng-transclude="">
-                <table class="table">
-                  <tbody>
-                    <tr>
-                      <th width="10%">Nom du parametre</th>
-                      <th>Valeur</th>
-                    </tr>
-                    <tr>
-                      <td width="10%">Param 1</td>
-                      <td class="success">foo</td>
-                    </tr>
-                    <tr>
-                      <td width="10%">Param 2</td>
-                      <td class="success">bar</td>
-                    </tr>
-                    <tr>
-                      <td width="10%">Param 3</td>
-                      <td class="success">baz</td>
-                    </tr>
-                    <tr>
-                      <td width="10%">Creer un dump</td>
-                      <td class="default">
-                        <label class="radio-inline custom-radio nowrap">
-                          <input type="radio" name="dump" id="dumpOn" value="on" disabled checked> 
-                          <span>Oui</span>
-                        </label>
-                        <label class="radio-inline custom-radio nowrap">
-                          <input type="radio" name="dump" id="dumpOff" value="off" disabled> 
-                          <span>Non</span>
-                        </label>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-            </div>
-            <div class="panel-heading clearfix"><h3 class="panel-title">Options :</h3></div>
-            <button type="button" class="btn btn-primary btn-with-icon"><i class="ion-android-download"></i>Deployer</button> &nbsp;&nbsp;&nbsp;
-            <button type="button" class="btn btn-info btn-with-icon"><i class="ion-stats-bars"></i>Modifier configuration</button>
         </uib-tab>
       </uib-tabset>
     </div>

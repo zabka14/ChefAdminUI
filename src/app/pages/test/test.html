@@ -1,11 +1,30 @@
-<h1>FooBar</h1>
+<h1>FooBarBaz</h1>
 
-<div ng-controller="CtrlTest">
-  <form novalidate class="simple-form">
-    Name: <input type="text" ng-model="user.name" /><br />
-    E-mail: <input type="email" ng-model="user.email" /><br />
-    <input type="button" ng-click="call()" value="Test" />
-  </form>
-  <pre>user = {{user | json}}</pre>
-  <pre>master = {{master | json}}</pre>
+
+
+<div ng-controller="CtrlTest" ng-init="init()">
+
+<div class="panel  with-scroll animated zoomIn" zoom-in="">
+  <div class="panel-heading clearfix">
+    <h3 class="panel-title">Selection de l'environnement</h3>
+  </div>
+  <div class="panel-body" ng-transclude="">
+        <div class="form-group">
+            <select class="form-control selectpicker ng-valid" >
+              <option ng-repeat="x in envs" value="{{x.id}}">{{x.libelle}}</option>
+            </select>
+        </div>
+  </div>
 </div>
+
+  <form class="simple-form">
+  	Param: <input type="text" ng-model="param.value1" />
+  	<input type="button" ng-click="switch(param)" value="Go!" />
+  </form>
+
+
+
+</div>
+
+
+

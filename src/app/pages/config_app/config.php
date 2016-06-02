@@ -32,10 +32,10 @@ if (isset($_POST['deploy'])){
 
 if ($deploy == "true") {
 	if ($node == 1) {
-		$result_exec = exec('knife ssh "name:MRM_WEB" "chef-client" -x rootint -a ipaddress')
+		$result_exec = exec('knife ssh "name:MRM_WEB" "chef-client" -x rootint -a ipaddress');
 	}
 	if ($node == 2){
-		$result_exec = exec('knife ssh "name:MRM_SGBD" "chef-client" -x rootint -a ipaddress')
+		$result_exec = exec('knife ssh "name:MRM_SGBD" "chef-client" -x rootint -a ipaddress');
 	}
 
 	echo $result_exec;

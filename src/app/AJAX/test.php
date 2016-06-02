@@ -1,25 +1,13 @@
 <?php
 
-	$deploy=false;
-	if (isset($_POST['node'])){
-		$node = $_POST['node'];
-	} else {
-		$node = "";
+	$mysqli = new mysqli('127.0.0.1', 'root', '', 'chefadmin');
+	$query = "SELECT * FROM environnements WHERE 1";
+	$res = $mysqli->query($query);
+	$result = array();
+	while ($row = $res->fetch_assoc()) 
+	{
+    	array_push($result, $row);
 	}
-	if (isset($_POST['deploy'])){
-			$deploy = $_POST['deploy'];
-		} else {
-			$deploy = "";
-		}
+	echo json_encode($result);
 
-	if ($deploy == "true") {
-	if ($node == 1) {
-		$result_exec = exec('knife ssh "name:MRM_WEB" "chef-client" -x rootint -a ipaddress');
-	}
-	if ($node == 2){
-		$result_exec = exec('knife ssh "name:MRM_SGBD" "chef-client" -x rootint -a ipaddress');
-	}
-
-	}
-	echo $result_exec;
 ?> 
