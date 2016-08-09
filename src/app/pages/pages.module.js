@@ -11,33 +11,62 @@
     'ui.router',
     'BlurAdmin.pages.main',
     'BlurAdmin.pages.app_list',
-    'BlurAdmin.pages.test',
+    'BlurAdmin.pages.add_app',
+    'BlurAdmin.pages.connexion',
   ])
 
 
 
       .config(function($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/main');
-        var state_conf = {
-          name: 'config_app',
-          url: '/config_app',
-          title: 'Configuration application ',
-          templateUrl: 'app/pages/config_app/config.php',
+
+        var working = {
+          name: 'working',
+          url: '/working',
+          title: 'Processing . . . ',
+          templateUrl: 'app/pages/connexion/working.php',
         };
+        $stateProvider
+            .state(working);
 
-        var test2 = {
-          name: 'test2',
-          url: '/test2',
-          title: 'Test2 ',
-          templateUrl: 'app/pages/test/test2.html',
+
+        var state_add_node = {
+          name: 'add_node',
+          url: '/add_node',
+          title: 'Ajouter nodes ',
+          templateUrl: 'app/pages/add_app/add_nodes.php',
         };
-
-
         $stateProvider
-            .state(state_conf);
-        $stateProvider
-            .state(test2);
+            .state(state_add_node);
 
-        });
+        var state_del_app = {
+          name: 'del_app',
+          url: '/del_app',
+          title: 'Supprimer application',
+          templateUrl: 'app/pages/app_list/del_app.php',
+        };
+        $stateProvider
+            .state(state_del_app);
+
+        var state_conf_app = {
+          name: 'conf_app',
+          url: '/conf',
+          title: 'Configurer application',
+          templateUrl: 'app/pages/app_list/cfg_app.php',
+        };
+        $stateProvider
+            .state(state_conf_app);
+
+
+        var state_add_param = {
+          name: 'add_param',
+          url: '/add_param',
+          title: 'Ajout d\' un parametre',
+          templateUrl: 'app/pages/app_list/add_param.php',
+        };
+        $stateProvider
+            .state(state_add_param);
+
+    })
 
 })();

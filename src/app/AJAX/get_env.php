@@ -1,6 +1,7 @@
 <?php
+	include_once("mysqli_utils.php");
+	$mysqli = connect();
 
-	$mysqli = new mysqli('127.0.0.1', 'root', '', 'chefadmin');
 	$query = "SELECT * FROM environnements WHERE 1";
 	$res = $mysqli->query($query);
 	$result = array();

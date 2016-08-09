@@ -11,7 +11,7 @@
           url: '/app_list',
           templateUrl: 'app/pages/app_list/app_list.php',
           title: 'Parametrage',
-          controller: 'ModalsPageCtrl',
+          controller: 'CtrlAppList',
           sidebarMeta: {
             order: 2,
             icon: 'ion-gear-b',

@@ -6,12 +6,15 @@ angular.module('BlurAdmin', [
   'ui.sortable',
   'ui.router',
   'ngTouch',
+  'ngCookies',
   'toastr',
   'smart-table',
   "xeditable",
   'ui.slimscroll',
   'ngJsTree',
-  'angular-progress-button-styles',
+  'angular-progress-button-styles',,
+  'angularSpinner',
+  'ngStorage',
 
   'BlurAdmin.theme',
   'BlurAdmin.pages'
